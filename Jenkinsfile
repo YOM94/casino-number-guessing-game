@@ -1,10 +1,11 @@
 pipeline {
     agent any
+
     stages {
-        stage('Build') { 
+        stage('Build') {
             steps {
-                bat 'rm -rf build'
-                bat 'cmake -B build -S .' 
+                bat 'if exist build rmdir /s /q build'
+                bat 'cmake -B build -S .'
                 bat 'cmake --build build'
             }
         }
