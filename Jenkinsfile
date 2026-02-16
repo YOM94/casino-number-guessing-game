@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'rm -rf build'
-                sh 'cmake -B build -S .' 
-                sh 'cmake --build build'
+                bat 'rm -rf build'
+                bat 'cmake -B build -S .' 
+                bat 'cmake --build build'
             }
         }
     }
